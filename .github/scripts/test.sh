@@ -6,7 +6,7 @@ alias pype='python3 $(pwd)/pype.py'
 
 # shellcheck disable=SC2046
 
-if ! . ../..setup.sh >> /dev/null; then
+if ! . setup.sh >> /dev/null; then
   echo 1. Setup script run correctly: Pass
 else
   echo 1. Setup script run correctly: Fail
