@@ -28,6 +28,6 @@ jobs:
       - name: Test pype
         run: |
           which python
-          which python
+          which python3
           sh .github/scripts/test.sh
           cat ~/.pype_profile
