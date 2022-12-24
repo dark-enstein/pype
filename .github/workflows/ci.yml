@@ -28,6 +28,7 @@ jobs:
       - name: Test pype
         run: |
           sh setup.sh
+          source ~/.pype_profile
           sh .github/scripts/test.sh
           pype request; echo $?
           cat ~/.pype_profile
