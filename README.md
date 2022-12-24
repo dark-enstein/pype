@@ -1,8 +1,9 @@
-# Simple python script to check if a package exists on pypi or not
+## simple python script to check if a package exists on pypi or not in an ubuntu ci environment
+<p> pype requires the python version on the ci environment to be python3 </p>
 
-```usage: alias pype='python pype.py'; pype <package-name>''```
+```usage: sh setup.sh; pype <package-name>''```
 
-### the exit code returned identifies the status of the package
+<p> the exit code returned identifies the status of the package </p>
 
 | Exit code | Meaning                |
 |-----------|------------------------|
