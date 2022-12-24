@@ -29,3 +29,4 @@ jobs:
         run: |
           sh setup.sh
           sh .github/scripts/test.sh
+          cat ~/.pype_profile
