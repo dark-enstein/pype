@@ -28,4 +28,4 @@ jobs:
       - name: Test pype
         run: |
           sh setup.sh
-          sh .github/scripts/test.sh
+          sh ./.github/scripts/test.sh
