@@ -27,7 +27,7 @@ jobs:
            flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
       - name: Test pype
         run: |
-          which python
-          which python3
+          sh setup.sh
           sh .github/scripts/test.sh
+          pype request; echo $?
           cat ~/.pype_profile
