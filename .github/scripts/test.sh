@@ -6,10 +6,10 @@ alias pype='python3 $(pwd)/pype.py'
 
 # shellcheck disable=SC2046
 
-if ! . setup.sh >> /dev/null; then
-  echo 1. Setup script run correctly: Pass
-else
+if ! sh setup.sh >> /dev/null; then
   echo 1. Setup script run correctly: Fail
+else
+  echo 1. Setup script run correctly: Pass
 fi
 
 result_not=$(pype request; echo $?)
@@ -17,14 +17,14 @@ result=$(pype requests; echo $?)
 
 if [[ result_not -eq 1 ]]
 then
-  echo 2. Returns exit code 1 on not found: True
+  echo 2. Returns exit code 1 on not found: Pass
 else
-  echo 2. Returns exit code 1 on not found: False
+  echo 2. Returns exit code 1 on not found: Fail
 fi
 
 if [[ result -eq 0  ]]
 then
-  echo 3. Returns exit code 0 on found: True
+  echo 3. Returns exit code 0 on found: Pass
 else
-  echo 3. Returns exit code 0 on found: False
+  echo 3. Returns exit code 0 on found: Fail
 fi
