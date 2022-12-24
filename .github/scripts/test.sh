@@ -1,27 +1,28 @@
 #! /bin/bash
 
-echo "Pype testing begins"
+echo "------------------------- PYPE TESTING BEGINS -------------------------"
 
 alias pype='python3 $(pwd)/pype.py'
 
-if ! . setup.sh; then
-  echo 1. Setup script exited with error
+if ! . setup.sh >> /dev/null; then
+  echo 1. Setup script run correctly: Pass
 else
-  echo 1. Setup script ran correctly
+  echo 1. Setup script run correctly: Fail
 fi
 
-result_not=$(pype request)
-result=$(pype requests)
-if test result_not == 404
+result_not=$(pype request; echo $?)
+result=$(pype requests; echo $?)
+
+if [[ result_not -eq 1 ]]
 then
-  echo 2. Test pass
+  echo 2. Returns exit code 1 on not found: True
 else
-  echo 2. Test fail
+  echo 2. Returns exit code 1 on not found: False
 fi
 
-if test result == 200
+if [[ result -eq 0  ]]
 then
-  echo 3. Test pass
+  echo 3. Returns exit code 0 on found: True
 else
-  echo 3. Test fail
+  echo 3. Returns exit code 0 on found: False
 fi
