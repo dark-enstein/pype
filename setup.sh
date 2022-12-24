@@ -11,7 +11,7 @@ init_pype() {
       echo pype already installed
     else
       echo "alias pype='python3 $(pwd)/pype.py'" >> $profile
-      source $profile
+      . $profile
       echo Done
     fi
 }
