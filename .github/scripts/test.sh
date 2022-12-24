@@ -4,7 +4,9 @@ echo "------------------------- PYPE TESTING BEGINS -------------------------"
 
 alias pype='python3 $(pwd)/pype.py'
 
-if ! . setup.sh >> /dev/null; then
+# shellcheck disable=SC2046
+
+if ! . ../..setup.sh >> /dev/null; then
   echo 1. Setup script run correctly: Pass
 else
   echo 1. Setup script run correctly: Fail
