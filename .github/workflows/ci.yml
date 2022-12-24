@@ -30,5 +30,6 @@ jobs:
           sh setup.sh
           cat ~/.pype_profile
           source ~/.pype_profile
+          python3 pype.py
           pype request; echo $?
           #sh .github/scripts/test.sh
