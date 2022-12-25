@@ -33,5 +33,5 @@ jobs:
           echo 'shopt -s expand_aliases' > $rc
           echo 'alias pype="python3 pype.py" ' >> $rc
           source /tmp/rcfile
-          sh setup.sh
+          sh .github/scripts/test.sh
           pype request
