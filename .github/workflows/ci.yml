@@ -23,12 +23,9 @@ jobs:
 
       - name: Test Pype
         run: |
-          rc=/tmp/rcfile
-          echo 'shopt -s expand_aliases' > $rc
-          echo 'alias pype="python3 pype.py" ' >> $rc
-          . /tmp/rcfile
-          # sh .github/scripts/test.sh
-          pype request
+          sh setup.sh
+          pype requests
+          echo $?
 
       - name: Lint with flake8
         run: |
@@ -36,3 +33,30 @@ jobs:
            flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
            # exit-zero treats all errors as warnings.
            flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
+#      - name: Test Pype
+#        run: |
+#          if ! sh setup.sh; then
+#            echo 1. Setup script run correctly: Fail
+#          else
+#            echo 1. Setup script run correctly: Pass
+#          fi
+#
+#      - name: Test Pype
+#        run: |
+#          result_not=$(pype request; echo $?)
+#          result=$(pype requests; echo $?)
+#
+#          if [[ result_not -eq 1 ]]
+#          then
+#            echo 2. Returns exit code 1 on not found: Pass
+#          else
+#            echo 2. Returns exit code 1 on not found: Fail
+#          fi
+#
+#          if [[ result -eq 0  ]]
+#          then
+#            echo 3. Returns exit code 0 on found: Pass
+#          else
+#            echo 3. Returns exit code 0 on found: Fail
+#          fi
