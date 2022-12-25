@@ -8,7 +8,11 @@ alias pype='python3 $(pwd)/pype.py'
 rc=/tmp/rcii
 #echo 'shopt -s expand_aliases' > $rc
 echo "alias pype='python3 pype.py' " >> $rc
+echo ". /tmp/rcii"
 . /tmp/rcii
+echo ". /tmp/rcii done"
+cat $rc
+pype requests
 #---
 
 # shellcheck disable=SC2046
