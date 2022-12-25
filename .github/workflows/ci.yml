@@ -25,24 +25,13 @@ jobs:
            flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
            # exit-zero treats all errors as warnings.
            flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-#       - name: Test pype
-#         run: |
-#           sh setup.sh
-#           shopt -s expand_aliases
-#           cat ~/.pype_profile
-#           source ~/.pype_profile
-#           alias pype="python3 pype.py"
-#           pype request; echo $?
-#           #sh .github/scripts/test.sh
           
       - shell: bash
+        name: Test pype
         run: |
           rc=/tmp/rcfile
           echo 'shopt -s expand_aliases' > $rc
           echo 'alias pype="python3 pype.py" ' >> $rc
-
-      - shell: bash
-        run: |
           source /tmp/rcfile
-          pype
-          ll    
+          sh setup.sh
+          pype request
