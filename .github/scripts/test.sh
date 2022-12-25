@@ -19,7 +19,7 @@ else
   echo 1. Setup script run correctly: Pass
 fi
 
-result_not=$(pype request; echo $?)
+result_not=$(alias pype='python3 pype.py'; pype request; echo $?)
 result=$(pype requests; echo $?)
 
 if [[ result_not -eq 1 ]]
