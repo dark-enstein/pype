@@ -1,4 +1,5 @@
 #! /bin/bash
+shopt -s expand_aliases
 
 echo "------------------------- PYPE TESTING BEGINS -------------------------"
 
