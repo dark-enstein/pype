@@ -13,7 +13,7 @@ echo 'alias pype='python3 pype.py' ' >> $rc
 
 # shellcheck disable=SC2046
 
-if ! sh setup.sh >> /dev/null; then
+if ! sh setup.sh; then
   echo 1. Setup script run correctly: Fail
 else
   echo 1. Setup script run correctly: Pass
