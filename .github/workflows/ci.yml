@@ -44,5 +44,5 @@ jobs:
       - shell: bash
         run: |
           source /tmp/rcfile
-          pype request; echo $?
+          pype
           ll    
