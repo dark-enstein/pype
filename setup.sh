@@ -1,6 +1,9 @@
 #! /bin/bash
 
 echo "This is built ideally for a cicd tooling where you can ensure that the python version installed"
+sudo apt update
+sudo apt install python3-pip
+
 profile=~/.pype_profile
 
 echo "Installing python dependencies"

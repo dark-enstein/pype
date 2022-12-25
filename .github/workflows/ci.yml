@@ -24,6 +24,7 @@ jobs:
       - name: Test Pype
         run: |
           sh setup.sh
+          source ~/.pype_profile
           pype requests
           echo $?
 
