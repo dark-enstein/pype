@@ -2,7 +2,7 @@
 
 echo "This is built ideally for a cicd tooling where you can ensure that the python version installed"
 sudo apt update
-sudo apt install python3-pip
+sudo apt install python3-pip -y
 
 profile=~/.pype_profile
 
