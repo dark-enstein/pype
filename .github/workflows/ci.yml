@@ -31,6 +31,18 @@ jobs:
           shopt -s expand_aliases
           cat ~/.pype_profile
           source ~/.pype_profile
-          alias='python3 pype.py'
+          alias pype="python3 pype.py"
           pype request; echo $?
           #sh .github/scripts/test.sh
+          
+      - shell: bash
+        run: |
+          rc=/tmp/rcfile
+          echo 'shopt -s expand_aliases' > $rc
+          echo 'alias pype="python3 pype.py" ' >> $rc
+
+      - shell: bash
+        run: |
+          source /tmp/rcfile
+          pype request; echo $?
+          ll    
