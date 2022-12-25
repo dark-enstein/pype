@@ -28,6 +28,7 @@ jobs:
       - name: Test pype
         run: |
           sh setup.sh
+          shopt -s expand_aliases
           cat ~/.pype_profile
           source ~/.pype_profile
           alias='python3 pype.py'
