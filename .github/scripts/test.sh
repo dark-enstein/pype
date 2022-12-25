@@ -1,5 +1,5 @@
 #! /bin/bash
-shopt -s expand_aliases
+#shopt -s expand_aliases
 
 echo "------------------------- PYPE TESTING BEGINS -------------------------"
 
@@ -8,7 +8,7 @@ alias pype='python3 $(pwd)/pype.py'
 rc=/tmp/rcii
 echo 'shopt -s expand_aliases' > $rc
 echo 'alias pype="python3 pype.py" ' >> $rc
-source /tmp/rcii
+. /tmp/rcii
 #---
 
 # shellcheck disable=SC2046
