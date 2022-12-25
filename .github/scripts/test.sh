@@ -18,8 +18,8 @@ else
   echo 1. Setup script run correctly: Pass
 fi
 
-result_not=$(pype.py request; echo $?)
-result=$(pype.py requests; echo $?)
+result_not=$(pype request; echo $?)
+result=$(pype requests; echo $?)
 
 if [[ result_not -eq 1 ]]
 then
